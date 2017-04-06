@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	var filters = {
+		all: function (todos) {
+			return todos;
+		},
+		active: function (todos) {
+			return todos.filter(
+				function (todo) {
+				return !todo.completed;
+			});
+		},
+		completed: function (todos) {
+			return todos.filter(function (todo) {
+				return todo.completed;
+			});
+		}
+	};
+	var todos = [{id: 1, label: '睡觉', completed: true}, {id: 2, label: '学习', completed: false}, {
+		id: 3,
+		label: '游泳',
+		completed: false
+	}];
+
+	console.log(filters["active"](todos));
+	console.log(filters.active(todos));
+-
+</script>
+
+</body>
+</html>
