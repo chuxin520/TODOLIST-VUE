@@ -68,6 +68,9 @@
 			},
 			//增加
 			addtodo: function () {
+				if (!this.todo) {
+					return;
+				}
 				this.todos.push({id: this.getId(), label: this.todo, completed: false});
 				this.todo = '';
 			},
